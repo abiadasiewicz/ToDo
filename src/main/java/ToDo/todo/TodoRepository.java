@@ -2,7 +2,9 @@ package ToDo.todo;
 
 import ToDo.HibernateUtil;
 
+
 import java.util.List;
+
 
 class TodoRepository {
     List<Todo> findAll()
@@ -13,6 +15,34 @@ class TodoRepository {
         transaction.commit();
         session.close();
         return result;
+    }
+
+    Todo toglleTodo(Integer id)
+    {
+        var session = HibernateUtil.getSessionFactory().openSession();
+        var transaction = session.beginTransaction();
+
+        var result = session.get(Todo.class, id);
+        result.setDone(!result.isDone());
+
+
+        transaction.commit();
+        session.close();
+        return result;
+    }
+
+    Todo addToDo(Todo newTodo)
+    {
+        var session = HibernateUtil.getSessionFactory().openSession();
+        var transaction = session.beginTransaction();
+
+        session.persist(newTodo);
+
+        transaction.commit();
+        session.close();
+
+        return newTodo;
+
     }
 
 }

@@ -20,7 +20,7 @@ private final static String FALLBACK_ID_WELCOME = "Hola";
         String name = null;
 
         //when
-        var result = SUT.prepareGreeting(null,"-1");
+        var result = SUT.prepareGreeting(null,-1);
 
         //then
         assertEquals(WELCOME+" "+ HelloService.FALLBACK_NAME+"!", result);
@@ -34,7 +34,7 @@ private final static String FALLBACK_ID_WELCOME = "Hola";
         String name = "test";
 
         //when
-        var result = SUT.prepareGreeting(name, "-1");
+        var result = SUT.prepareGreeting(name, -1);
 
         //then
         assertEquals(WELCOME+" "+name+"!", result);
@@ -53,7 +53,7 @@ private final static String FALLBACK_ID_WELCOME = "Hola";
         //then
         assertEquals(FALLBACK_ID_WELCOME+" "+HelloService.FALLBACK_NAME+"!", result);
     }
-    @Test
+ /*   @Test
     public void test_texLang_prepareGreeting_returnsGreetingWithFallbackIdLang() throws Exception {
         //given
         var mocRepository = fallbackLangIdRepository();
@@ -66,7 +66,7 @@ private final static String FALLBACK_ID_WELCOME = "Hola";
 
         //then
         assertEquals(FALLBACK_ID_WELCOME+" "+HelloService.FALLBACK_NAME+"!", result);
-    }
+    }*/
 
     @Test
     public void test_prepareGreeting_nonExistingLang_returnsGreetingWithFallbackLang()
@@ -79,7 +79,7 @@ private final static String FALLBACK_ID_WELCOME = "Hola";
         };
         var SUT = new HelloService(mocRepository);
 
-        var result = SUT.prepareGreeting(null, "-1");
+        var result = SUT.prepareGreeting(null, -1);
 
         assertEquals(HelloService.FALLBACK_LANG.getWelcomeMsg()+" "+HelloService.FALLBACK_NAME+"!",result);
     }

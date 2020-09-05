@@ -4,14 +4,9 @@ class LangDTO {
     private Integer id;
     private String code;
 
-    public LangDTO(Lang lang) {
+    LangDTO(Lang lang) {
         this.id = lang.getId();
         this.code = lang.getCode();
-    }
-
-    LangDTO()
-    {
-        this(new Lang());
     }
 
     public Integer getId() {
@@ -29,5 +24,4 @@ class LangDTO {
     public void setCode(String code) {
         this.code = code;
     }
-
 }

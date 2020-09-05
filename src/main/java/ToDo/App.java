@@ -12,7 +12,6 @@ import org.eclipse.jetty.webapp.*;
 public class App {
     public static void main(String[] args) throws Exception {
         var webapp = new WebAppContext();
-        webapp.setInitParameter("org.eclipse.jetty.servlet.Default.maxCachedFiles", "0");
         webapp.setResourceBase("src/main/webapp");
         webapp.setContextPath("/");
         webapp.setConfigurations(new Configuration[]

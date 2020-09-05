@@ -15,7 +15,7 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.h2.Driver</property>
-        <property name="connection.url">jdbc:h2:file:./DataBase</property>
+        <property name="connection.url">jdbc:h2:file:C:\Users\adamb\OneDrive\Pulpit\Java\ToDo\DataBase</property>
         <property name="connection.username">sa</property>
         <property name="connection.password"/>
 

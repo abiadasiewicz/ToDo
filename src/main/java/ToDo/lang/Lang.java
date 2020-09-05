@@ -1,5 +1,4 @@
 package ToDo.lang;
-
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
@@ -11,11 +10,18 @@ import javax.persistence.Table;
 @Table(name = "languages")
 public class Lang {
     @Id
-    @GeneratedValue(generator="inc")
-    @GenericGenerator(name="inc", strategy = "increment")
-    private Integer  id;
+    @GeneratedValue(generator = "inc")
+    @GenericGenerator(name = "inc", strategy = "increment")
+    private Integer id;
     private String welcomeMsg;
     private String code;
+
+    /**
+     * Hibernate (JPA) needs it.
+     */
+    @SuppressWarnings("unused")
+    Lang() {
+    }
 
     public Lang(Integer id, String welcomeMsg, String code) {
         this.id = id;
@@ -41,14 +47,5 @@ public class Lang {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    /**
-     * Hibernate needs it
-     */
-    @SuppressWarnings("unused")
-    Lang()
-    {
-
     }
 }

@@ -82,7 +82,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>6.5.5</version>
                 <configuration>
-                    <url>jdbc:h2:file:./DataBase</url>
+                    <url>jdbc:h2:file:C:\Users\adamb\OneDrive\Pulpit\Java\ToDo\DataBase</url>
                     <user>sa</user>
                 </configuration>
             </plugin>
